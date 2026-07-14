@@ -1,0 +1,210 @@
+.m-nav-layout {
+  /* 覆盖全局的 vp-layout-max-width（仅当前页面使用） */
+  --vp-layout-max-width: 100%;
+
+  /* layout 样式 */
+  .container {
+    max-width: var(--vp-layout-max-width) !important;
+  }
+
+  .content-container,
+  .content {
+    max-width: 100% !important;
+    padding-left: 0.1% !important;
+    padding-right: 0.1% !important;
+  }
+
+  .content .copyright {
+    display: none;
+  }
+
+  /* 更精确地调整右侧导航 */
+  .VPDocAside {
+    padding: 0 10px 0 5px !important;
+    margin-left: 5px !important;
+
+    .outline-title {
+      padding-left: 12px !important;
+      margin-left: 6px !important;
+    }
+
+    .outline-link {
+      padding-left: 12px !important;
+      margin-left: 6px !important;
+    }
+
+    /* 调整活动链接的样式 */
+    .outline-link.active {
+      padding-left: 9px !important;
+      /* 可能需要微调以保持对齐 */
+      border-left: 3px solid var(--vp-c-brand);
+      /* 保持活动指示器 */
+    }
+  }
+
+  /* tip */
+  .tip {
+    .custom-block-title {
+      display: none;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  .vp-doc h1 {
+    margin-top: -25px;
+  }
+
+  .vp-doc h2 {
+    margin-top: 24px;
+  }
+
+  .vp-doc a {
+    text-decoration: none;
+  }
+
+  h2 {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+/* 修正媒体查询 */
+@media (min-width: 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+}
+
+.aside-container {
+  position: fixed;
+  max-width: 200px;
+  height: 100%;
+  padding-right: 1rem;
+  padding-bottom: 50px;
+  overflow: hidden !important;
+}
+
+.reward-section {
+  display: flex;
+  top: 15rem;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 15rem;
+  padding: 12px 0;
+  color: var(--reward-section-text-color);
+}
+
+.reward-section img {
+  max-width: 115px;
+  border-radius: 8px;
+}
+
+.m-nav-layout .container,
+.m-nav-layout .content-container,
+.m-nav-layout .content {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  :root .VPFooter {
+    border-top: none;
+  }
+}
+
+/* 导航布局移动端适配 */
+.m-nav-layout {
+  --vp-layout-max-width: 100%;
+
+  .container {
+    padding-left: 1vw;
+    padding-right: 1vw;
+  }
+
+  .content-container {
+    margin-top: -10px;
+  }
+
+  .vp-doc h2 {
+    margin-top: 16px;
+  }
+
+  /* 修复移动端导航下拉菜单靠左问题 */
+  .VPLocalNavOutlineDropdown {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
+
+/* 网格容器移动端适配 */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+/* 侧边栏移动端适配 */
+.aside-container {
+  position: static;
+  max-width: 100%;
+  padding-right: 0;
+  padding-bottom: 20px;
+  overflow: visible !important;
+}
+
+/* 奖励部分移动端适配 */
+.reward-section {
+  margin: 0 0 5rem;
+  padding: 8px 0;
+}
+
+/* 文档列表移动端适配 */
+.vp-doc ul,
+.vp-doc ol {
+  padding-left: 0.5rem;
+  margin: 16px 0;
+}
+
+
+/* 针对不同尺寸的设备进行更精细的调整 */
+@media screen and (max-width: 375px) {
+  .html {
+    font-size: 9vw;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .m-nav-layout .container {
+    padding-left: 1vw;
+    /* 为最小屏幕设置稍小的内边距 */
+    padding-right: 1vw;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 414px) {
+  .html {
+    font-size: 9.5vw;
+  }
+
+  .m-nav-layout .container {
+    padding-left: 1vw;
+    /* 为中等尺寸屏幕添加适当内边距 */
+    padding-right: 1vw;
+  }
+}
+
+/* 适配iPhone X及以上的刘海屏 */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .has-safe-area {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}

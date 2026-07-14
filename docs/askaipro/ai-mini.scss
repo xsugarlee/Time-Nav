@@ -1,0 +1,28 @@
+.ai-pro-layout {
+    display: flex;
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-x: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(15px) saturate(2.0) contrast(0.9);
+
+    .VPDoc.has-aside .aside {
+        display: none !important;
+        width: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .reward-container,
+    [class*='reward'],
+    [class*='zanshang'] {
+        display: none !important;
+    }
+}

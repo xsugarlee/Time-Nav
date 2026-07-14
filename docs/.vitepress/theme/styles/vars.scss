@@ -1,0 +1,179 @@
+/**
+ * Colors
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-c-gutter: var(--vp-c-divider);
+  --vp-code-block-bg: rgba(125, 125, 125, 0.04);
+  --vp-code-tab-divider: var(--vp-c-divider);
+  --vp-code-copy-code-bg: rgba(125, 125, 125, 0.1);
+  --vp-code-copy-code-hover-bg: rgba(125, 125, 125, 0.2);
+  --vp-c-disabled-bg: rgba(125, 125, 125, 0.2);
+  --vp-code-tab-text-color: var(--vp-c-text-2);
+  --vp-code-tab-active-text-color: var(--vp-c-text-1);
+  --vp-code-tab-hover-text-color: var(--vp-c-text-1);
+  --vp-code-copy-code-active-text: var(--vp-c-text-2);
+  --vp-c-text-dark-3: rgba(56, 56, 56, 0.8);
+
+  --vp-c-highlight-bg: var(--vp-c-brand-light);
+  --vp-c-highlight-text: var(--vp-c-bg);
+
+  --vp-c-brand: #40b681;
+  --vp-c-brand-light: #3dd68c;
+  --vp-c-bg: #f4f4f4;
+  --vp-c-text: #333333;
+  --reward-section-text-color: var(--vp-c-text);
+  --reward-section-img-filter: brightness(100%);
+}
+
+.dark {
+  --vp-code-block-bg: rgba(0, 0, 0, 0.2);
+  --vp-c-text-code: #c0cec0;
+
+  --vp-c-brand: #3dd68c;
+  --vp-c-bg: #1b1b1f;
+  --vp-c-text: #e0e0e0;
+  --reward-section-text-color: rgba(255, 255, 255, 0.8);
+  --reward-section-img-filter: brightness(80%);
+}
+
+:root {
+    --vp-c-brand-1: #40b681;
+    --vp-c-brand-2: #299764;
+    --vp-c-brand-3: #30a46c;
+}
+
+.dark {
+    --vp-c-brand-1: #3dd68c;
+    --vp-c-brand-2: #30a46c;
+    --vp-c-brand-3: #298459;
+  }
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-button-brand-border: var(--vp-c-brand-light);
+  --vp-button-brand-text: var(--vp-c-white);
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-border: var(--vp-c-brand-light);
+  --vp-button-brand-hover-text: var(--vp-c-white);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+  --vp-button-brand-active-border: var(--vp-c-brand-light);
+  --vp-button-brand-active-text: var(--vp-c-white);
+  --vp-button-brand-active-bg: var(--vp-button-brand-bg);
+}
+
+/**
+ * Component: Home
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(
+    120deg,
+    var(--vp-c-brand) 30%,
+    var(--vp-c-brand-next)
+  );
+  --vp-home-hero-image-background-image: linear-gradient(
+    -45deg,
+    var(--vp-c-brand) 30%,
+    var(--vp-c-brand-next)
+  );
+  --vp-home-hero-image-filter: blur(80px);
+}
+@media (min-width: 640px) {
+  :root {
+    --vp-home-hero-image-filter: blur(120px);
+  }
+}
+@media (min-width: 960px) {
+  :root {
+    --vp-home-hero-image-filter: blur(120px);
+  }
+}
+/* Safari has a very bad performance on gradient and filter */
+.browser-safari,
+.browser-firefox {
+  --vp-home-hero-image-background-image: transparent;
+  --vp-home-hero-image-filter: '';
+}
+
+/**
+ * Component: Custom Block
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-custom-block-tip-text: var(--vp-c-brand-darker);
+  --quote-block-bg-color: #f8f8f8;
+  --quote-left-color: #cbcbcb;
+}
+.dark {
+  --vp-custom-block-tip-text: var(--vp-c-brand-lightest);
+  --quote-block-bg-color: #3333337a;
+  --quote-left-color: #888888;
+}
+
+/* 提示框 */
+.custom-block.tip {
+  border-color: #5ca4e700;
+  background-color: var(--vp-c-green-soft);
+}
+
+/* 警告框 */
+.custom-block.warning {
+  border-color: #5ca4e700;
+  background-color: #5ca4e73d;
+}
+
+/* 危险框 */
+.custom-block.danger {
+  /* border-color: #f43f5e; #f66fd0e8; */
+  background-color: #f66fd21e;
+}
+
+/* 引用块 */
+.vp-doc blockquote {
+  display: block;
+  font-size: 13px;
+  overflow: auto;
+  position: relative;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 15px 30px 15px 20px;
+  background-color: var(--quote-block-bg-color);
+  border-left: 3px solid var(--quote-left-color);
+}
+
+.infobox .title {
+    display: none;
+}
+
+/**
+ * Mobile Responsive Font Size
+ * -------------------------------------------------------------------------- */
+  :root {
+    --vp-mobile-font-size-base: 16px;
+    --vp-mobile-font-size-nav: 14px;
+  }
+
+/**
+ * Component: Mobile Navigation
+ * -------------------------------------------------------------------------- */
+
+  .VPLocalNavOutlineDropdown button {
+    font-size: var(--vp-mobile-font-size-nav) !important;
+    line-height: 28px !important;
+  }
+
+  .vpi-chevron-right.icon {
+    transform: scale(1.2);
+    margin-left: 2px;
+  }
+  
+  /* 其他可能需要调整字体大小的移动端元素 */
+  .vp-doc {
+    font-size: var(--vp-mobile-font-size-base);
+  }
+
+  .menu {
+    font-size: var(--vp-mobile-font-size-nav) !important;
+    line-height: 28px !important;
+  }
